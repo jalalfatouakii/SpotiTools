@@ -431,6 +431,14 @@ document.addEventListener('DOMContentLoaded', function () {
             : artists[0];
     
         // Construct the final text
+        console.log(genreText,artistText);
+        console.log(genreText == 'undefined',artistText == 'undefined',typeof artistText !== 'undefined',typeof genreText !== 'undefined' )
+        if (typeof genreText == 'undefined'){
+            return `songs made by ${artistText} only`
+        }
+        else if (typeof artistText == 'undefined'){
+            return `${genreText} songs only`
+        }
         return `${genreText} songs made by ${artistText} only`;
     }
     
@@ -1248,7 +1256,7 @@ document.addEventListener('DOMContentLoaded',function (){
             console.log(data);  // Handle the response data here
           // Select the div to display user info
             const userInfoDiv = document.getElementById('userInfo');
-            const profileImageUrl = data.images && data.images.length > 0 ? data.images[1].url : 'default-image-url.jpg';
+            const profileImageUrl = data.images && data.images.length > 0 ? data.images[0].url : 'default-image-url.jpg';
             const txto = data.product;
             txti = capitalizeFirstLetter(txto);
             
