@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify({
                 name: newPlaylistName,
-                description: `Filtered playlist of ${currentPlaylistName}`,
+                description: `Filtered playlist of ${currentPlaylistName}. By SpotiTools!`,
                 public: false
             })
         })

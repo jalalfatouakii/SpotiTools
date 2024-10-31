@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify({
                 name: newPlaylistName,
-                description: `Filtered playlist of ${currentPlaylistName} by ${formatText(selectedFilters)}`,
+                description: `Filtered playlist of ${currentPlaylistName} by ${formatText(selectedFilters)}. Made using SpotiTools !`,
                 public: false
             })
         })
@@ -1084,8 +1084,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function saveFilteredPlaylist() {
         const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
         console.log(selectedFilter)
-        const newPlaylistName = `Mixed UP! by PLACEHOLDER ${selectedFilter}`;
-        const descr = `This playlist was made using PLACEHOLDER with the ${selectedFilter} filter`
+        const newPlaylistName = `Mixed UP! by SpotiTools (${selectedFilter})`;
+        const descr = `This playlist was made using SpotiTools with the ${selectedFilter} filter`
         fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
             method: 'POST',
             headers: {
