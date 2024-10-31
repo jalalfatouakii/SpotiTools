@@ -13,9 +13,9 @@
 ![Screenshot of the playlist selection screen](pictures/playlistselect.png)
 - **Playlist Filtering**: Options to filter playlists by artists and genres.
 - **Multiple Filter Selection**: Ability to select multiple filters simultaneously to refine the search.
-![Screenshot of the playlist filtering screen](pictures/playlistfilter.png)
 - **Highlight Selected Items**: Selected artists or genres are highlighted in gold, reverting to green when a new item is selected.
 - **Display Songs in a Playlist**: Show details of the songs in a selected playlist.
+![Screenshot of the playlist filtering screen](pictures/playlistfilter.png)
 - **Account Information**:
   - Created playlists
   - Most played songs
