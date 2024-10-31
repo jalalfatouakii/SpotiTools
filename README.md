@@ -2,7 +2,7 @@
 
 ## Description
 
-**SpotiToolsr** is a web application designed to filter and merge Spotify playlists while providing users with detailed information about their Spotify account.  With advanced features to explore artists, genres, and compatibility between multiple playlists, this application aims to enhance the listening experience for Spotify users.
+**SpotiTools** is a web application designed to filter and merge Spotify playlists while providing users with detailed information about their Spotify account.  With advanced features to explore artists, genres, and compatibility between multiple playlists, this application aims to enhance the listening experience for Spotify users.
 
 ## Features
 
