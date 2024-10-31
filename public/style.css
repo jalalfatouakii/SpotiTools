@@ -1,0 +1,750 @@
+@font-face { font-family: Gotham; src: url('Gotham-Light.otf'); } 
+@font-face { font-family: Gotham-Bold; src: url('Gotham-Bold.otf'); } 
+
+body {
+    background-color: rgb(18, 18, 18);
+    font-family: Gotham;
+    margin: 0;
+    padding: 0;
+}
+
+.titre {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(30, 215, 96);
+    text-underline-offset: 1vh;
+}
+#login-btn, #login-btnn {
+    background-color: rgb(30, 215, 96);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: font-size 1s, background-color 1s;
+}
+#login-btn:hover, #login-btnn:hover {
+    background-color: rgb(20, 150, 70);
+    font-size: 20px;
+    
+}
+
+#subtext {
+    font-family: Gotham-Bold;
+    margin-top: -0.5%;
+}
+
+#spo {
+    -webkit-text-stroke: 0.5px rgb(30, 215, 96);
+    -webkit-text-stroke-color: rgb(30, 215, 96);
+    font-family: Gotham-Bold;
+}
+
+.box {
+    padding: 10%;
+    text-align: center;
+    color: white;
+    margin-top: -10%;
+}
+
+#playlists-list, #tracks-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#playlists-list li, #tracks-list li {
+    margin: 10px 0;
+}
+
+#playlists-list li a, #tracks-list li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+#playlists-list li a:hover, #tracks-list li a:hover {
+    background-color: rgb(30, 215, 96);
+    color: black;
+}
+.hidden {
+    display: none;	
+}
+
+#change-playlist-btn{
+    background-color: rgb(30, 61, 215);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+    margin-top: 30px;
+}
+
+#change-playlist-btn:hover{
+    background-color: rgb(20, 29, 150);
+}
+
+#select-sort{
+    background-color: rgb(215, 110, 30);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+    margin-top: 30px;
+    margin-bottom:-10px;
+}
+#select-sort:hover{
+    background-color: rgb(150, 85, 20);
+}
+
+#select-sort-g{
+    background-color: rgb(200, 215, 30);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+    margin-top: 20px;
+    margin-bottom:-10px;
+    margin-left:10px;
+}
+#select-sort-g:hover{
+    background-color: rgb(150, 150, 20);
+}
+
+#filter-container {
+    margin-top: 20px;
+    color: white;
+    }
+    
+#filter-input {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: rgb(18, 18, 18);
+    color: white;
+}
+    
+#filter-artist-btn, #filter-genre-btn {
+    background-color: rgb(30, 215, 96);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.5s;
+}
+    
+#filter-artist-btn:hover, #filter-genre-btn:hover {
+    background-color: rgb(20, 150, 70);
+}
+
+#save-playlist-btn{
+    background-color: rgb(255, 215, 0);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+#save-playlist-btn:hover{
+    background-color: rgb(196, 166, 0);
+}
+
+#changement{
+    margin-top: 1%;
+}
+#changement2{
+    margin-top: 1%;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(18, 18, 18);
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background-color 0.5s; /* Smooth transition */
+}
+
+.nav-left .nav-text {
+    font-family: Gotham-Bold;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-right .nav-btn {
+    color: rgb(30, 215, 96);
+    border: none;
+    padding: 10px 10px;
+    font-family: Gotham-Bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-right .nav-btn:hover {
+    color: rgb(20, 150, 70);
+}
+
+.nav-text:hover{
+    color: rgb(20, 150, 70);
+}
+
+.navbar.scrolled {
+    background-color: rgb(30, 215, 96);
+}
+#genres-table, #artists-table {
+    margin-top: 20px;
+    color: white;
+}
+
+.genre-btn, .artist-btn {
+    background-color: rgb(30, 215, 96);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Gotham-Bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.genre-btn:hover, .artist-btn:hover, #showmoreartist:hover, #showmoresong:hover {
+    background-color: rgb(20, 150, 70);
+}
+.selected{
+    background-color: gold;
+    color: black;
+    transition: background-color 0.3s;
+}
+.selected:hover{
+    background-color: rgb(196, 166, 0);
+
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    list-style-type: none; /* Remove list styling if using ul/li */
+}
+
+.flex-item {
+    flex: 1 1 30%; /* Adjusts the base width to about a third of the container's width */
+    background-color: #111; /* Dark background for the item */
+    color: white; /* Text color */
+    margin: 5px; /* Margin around items */
+    box-sizing: border-box;
+    height: 250px; /* Fixed height to ensure uniformity */
+    display: flex;
+    flex-direction: column;
+}
+
+.item-header {
+    background-color: rgb(30, 215, 96); /* Green background for the header */
+    padding: 10px;
+    font-weight: bold;
+}
+
+.item-content {
+    padding: 20px;
+    border: 2px solid rgb(30, 215, 96); /* Consistent border with the header */
+    flex-grow: 1; /* Allows the content area to expand to fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaces children evenly */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 800px) {
+    .nav-left{
+        display: flex;
+        justify-content: space-between; 
+    }
+    .flex-item {
+        flex: 1 1 100%; /* Each item takes full width of the container */
+        height: 15%;
+    }
+}
+
+.contact-form {
+    background-color: rgb(23, 23, 23);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 75%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 3%;
+    border: 3px solid rgb(30, 215, 96);
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-button {
+    background-color: rgb(30, 215, 96);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s;
+}
+
+.form-button:hover {
+    background-color: rgb(20, 150, 70);
+}
+
+.faq-container {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(23, 23, 23);
+    border-radius: 8px;
+    border: 3px solid rgb(30, 215, 96);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+    text-align: center;
+    color: #ffffff;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgb(30, 215, 96);
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.faq-button:hover {
+    background-color: rgb(20, 150, 70);
+}
+
+.faq-content {
+    display: none;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-left: 3px solid rgb(30, 215, 96);
+    border-radius: 0 0 4px 4px;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    font-size: 30px; /* Large font size for easy interaction */
+    color: white;
+}
+
+/* Hide navbar buttons on small screens */
+@media (max-width: 800px) {
+    #adapter{
+        flex-direction: column;
+    }
+    .titre{
+        text-align: left;
+        padding: 3%;
+    }
+    #txtlog{
+        text-align: left;
+        margin-left: -9%;
+    }
+    .nav-right .nav-btn {
+        display: none; /* Hide all navigation buttons */
+    }
+    .hamburger {
+        display: block; /* Show hamburger menu */
+        text-align: center;
+        left: 50%;
+        transition: color 0.5s;
+    }
+    .hamburger:hover{
+        color: rgb(20, 150, 70);
+    }
+    .navbar.expanded .nav-right .nav-btn,
+    .expb {
+        display: block; /* Show buttons when expanded */
+        padding: 10px; /* Increase padding for touch targets */
+        text-align: left;
+        width: 100%;
+    }
+    .expbar {
+        flex-direction: column;
+    }
+    
+    .expr {
+        width: 100%; /* Full width */
+        display: flex;
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: flex-start; /* Align links to the start */
+    }
+    
+    .expb {
+        width: 100%; /* Each button takes full width */
+        padding: 10px; /* More padding for better touch interaction */
+        text-align: left; /* Aligns text to the left for better readability */
+        color: white;
+        text-decoration: none;
+        transition: color 0.5s;
+        
+    }
+    .expb:hover{
+        color: rgb(20, 150, 70);
+    }
+    .cocol{
+        display: block;
+    }
+    #statos{
+        flex-direction: column;
+    }
+    .helloi{
+        flex-direction: column;
+    }
+    .helloi p{
+        text-align: center;
+    }
+    .songo img{
+        height : 30vh;
+        width: 30vh;
+    }
+}
+
+
+/* Add a wrapper to handle the layout */
+.page-wrapper {
+    position: relative;
+    bottom: 0;
+    flex-direction: column;
+  }
+  
+  .footer {
+    background-color: rgb(18, 18, 18); /* Matches the page background color */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Pushes the footer to the bottom */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Spacing between links */
+  }
+  
+  .footer-link {
+    color: white; /* Link color */
+    text-decoration: none;
+    transition: color 0.4s;
+  }
+  
+  .footer-link:hover {
+    color: rgb(20, 150, 70);
+  }
+  
+  #open-spotify-btn {
+    background-color: rgb(30, 215, 96);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s;
+}
+
+#open-spotify-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+#open-spotify-btn:hover {
+    background-color: rgb(20, 150, 70);
+}
+#filda{
+    margin-top: 2%;
+}
+#filter-options {
+    margin-top: 15px;
+    padding: 10px 0 30px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(18, 18, 18);
+}
+#next-btn{
+
+    background-color: rgb(30, 215, 96);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s;
+    margin-top: 10px;
+}
+#next-btn:hover {
+    background-color: rgb(20, 150, 70);
+}
+#removing{
+    background-color: red;
+    transition: background-color 0.5s;
+}
+#removing:hover {
+    background-color: rgb(150, 20, 20);
+}
+
+#clear-filter-btn{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+
+#clear-filter-btn:hover{
+    background-color: rgb(150, 20, 20);
+}
+
+#refresh-btn{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.5s;
+    margin : 1%
+}
+
+#refresh-btn:hover{
+    background-color: rgb(150, 20, 20);
+}
+#hidgenn, #hidartt, #hidsong{
+    background-color: rgb(45, 170, 45);
+}
+#hidgenn:hover, #hidartt:hover, #hidsong:hover{
+    background-color: rgb(20, 150, 61);
+}
+.hiding{
+    background-color: red;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 1px 15px;
+    font-family: Gotham-Bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.5s;
+    margin-right: 10px;
+}
+.hiding:hover{
+    background-color: rgb(150, 20, 20);
+}
+
+
+#userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Center horizontally */
+    text-align: left; /* Keep the text aligned to the left */
+    margin: 0 auto;
+    flex-direction: column;
+    margin-top:3vh;
+}
+#userInfo a{
+    text-decoration:none;
+    color: white;
+}
+#logito {
+    margin-right: 20px;
+}
+  
+#logito img {
+    border-radius: 5px;
+    width: 150px; /* Profile picture size */
+}
+  
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+  
+.profile-details p {
+    margin: 5px 0;
+}
+#statos{
+    display: flex;
+    flex-direction: column;
+}
+#statos p{
+    margin: 5%;
+}
+#statos h2{
+    text-align: center;
+}
+.helloi{
+    display: flex;
+    justify-content: center;
+}
+.songo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    flex: 1; /* Make each songo take equal space */
+}
+
+.songo img {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    
+}
+
+
+.songo p {
+    font-size: 16px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around; /* Ensures equal spacing between songo elements */
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping if the screen is too small */
+}
+.songo img{
+    transition: .2s;
+}
+.songo img:hover{
+    transform: scale(1.1);
+}
+#timeRangeButtons {
+    text-align: center;
+}
+#timeRangeButtons button {
+    background-color: rgb(30, 215, 96);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s;
+}
+
+#timeRangeButtons button:hover {
+    background-color: rgb(20, 150, 70);
+}
+
+#showmoreartist, #showmoresong{
+    background-color: rgb(30, 215, 96);
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Gotham-Bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    height:30px;
+    margin-top: 10%;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    <link rel="icon" sizes="32x32" type="image/png" href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
+     -->
+    <script src="script.js"></script>
+    <title>Contact Us</title>
+</head>
+<body>
+    <nav class="navbar" id="naviga">
+        <div class="nav-left">
+            <a href="index.html" class="nav-text">Placeholder</a>
+        </div>
+        <div class="nav-right" id="navir">
+            <span class="hamburger">&#9776;</span>
+            <div class="cocol">
+                <a href="mixup.html" id="btn4" class="nav-btn">Mix-Up!</a>
+                <a href="informations.html" id="btn5" class="nav-btn">Account Informations</a>
+                <a href="features.html" id="btn1" class="nav-btn">Features</a>
+                <a href="faq.html" id="btn2" class="nav-btn">FAQ</a>
+                <a href="contact.html" id="btn3" class="nav-btn">Contact Us</a>
+            </div>
+            
+            
+        </div>
+    </nav>
+
+    <div class="contact-form">
+        <h1 class="form-title">Contact Us</h1>
+        <form class="form" action="https://formspree.io/f/mldrnerv" method="POST">
+            <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-input" type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="country">Country</label>
+                <select class="form-select" id="country" name="country" required>
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                    <option value="australia">Australia</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-textarea" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button class="form-button" type="submit">Send Message</button>
+        </form>
+    </div>
+    <div class="page-wrapper">
+        <!-- Your existing content goes here -->
+      
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-content">
+            <a href="https://www.instagram.com/jixiolz" target="_blank" class="footer-link">Instagram</a>
+            <a href="mailto:fatouaki.jalal@gmail.com" class="footer-link">Email</a>
+            <a href="https://www.linkedin.com/in/jalal-fatouaki-240b512b4/" target="_blank" class="footer-link">LinkedIn</a>
+          </div>
+        </footer>
+      </div>
+      
+</body>
+</html>

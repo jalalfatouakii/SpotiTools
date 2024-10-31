@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Authentication Callback</title>
+</head>
+<body>
+    <script>
+        (function() {
+            console.log('Callback loaded');
+            const hash = window.location.hash.substring(1);
+            const params = new URLSearchParams(hash);
+            const accessToken = params.get('access_token');
+            const expiresIn = params.get('expires_in');
+
+            console.log('Access Token:', accessToken);
+            console.log('Expires In:', expiresIn);
+
+            if (accessToken) {
+                window.opener.postMessage({ access_token: accessToken, expires_in: expiresIn }, window.location.origin);
+                window.close();
+            } else {
+                console.error('Access token not found in callback');
+            }
+        })();
+    </script>
+</body>
+</html>

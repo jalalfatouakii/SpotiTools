@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="32x32" type="image/png" href="TEST-1.png">
+    <title>Spotify Playlist Filterer</title>
+</head>
+<body>
+    <nav class="navbar" id="naviga">
+        <div class="nav-left">
+            <a href="index.html" class="nav-text">Placeholder</a>
+        </div>
+        <div class="nav-right" id="navir">
+            <span class="hamburger">&#9776;</span>
+            <div class="cocol">
+                <a href="mixup.html" id="btn4" class="nav-btn">Mix-Up!</a>
+                <a href="informations.html" id="btn5" class="nav-btn">Account Informations</a>
+                <a href="features.html" id="btn1" class="nav-btn">Features</a>
+                <a href="faq.html" id="btn2" class="nav-btn">FAQ</a>
+                <a href="contact.html" id="btn3" class="nav-btn">Contact Us</a>
+            </div>
+            
+            
+        </div>
+    </nav>
+    <div class="titre" id="titre">
+        <h1>Welcome to the <span id="spo">Spotify</span> Playlist Filterer</h1>
+        <h3 id="subtext">Made by Jalal FATOUAKI</h3>
+    </div>
+
+    <div class="box">
+        <h1 id="txtlog">To select the playlist you would like to filter, please continue by logging into your Spotify account.</h1>
+        <button id="login-btn">Log in with Spotify</button>
+        <div id="playlists-container" class="hidden">
+            <h2>Please select one of the following playlists to filter:</h2>
+            <ul id="playlists-list"></ul>
+        </div>
+        
+        <div id="tracks-container" class="hidden">
+            <h2>Tracks in the selected playlist:</h2>
+            <div class="hidden" id="affiche"><button class="hiding" id="hidson"> Hide </button><button class="hiding hidden" id="hidsong"> Show </button></div>
+            <ul id="tracks-list"></ul>
+        </div>
+        <div id="filter-container" class="hidden">
+            <h2>Filtered by:</h2>
+            <input type="text" id="filter-input" placeholder="Enter artist or genre">
+            <button id="filter-artist-btn">Artist</button>
+            <button id="filter-genre-btn">Genre</button>
+        </div>
+        <div id="genres-table" class="hidden"></div>
+        <div id="artists-table" class="hidden"></div>
+        <button id="select-sort" class="hidden">Toggle "AND" filtering for Artists</button>
+        <button id="select-sort-g" class="hidden">Toggle "AND" filtering for Genres</button><br>
+        <button id="change-playlist-btn" class="hidden">Change Playlist</button>
+        <div id="changement2"></div>
+        <div id="changement"></div>
+    </div>
+    <div class="page-wrapper">
+        <!-- Your existing content goes here -->
+      
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-content">
+            <a href="https://www.instagram.com/jixiolz" target="_blank" class="footer-link">Instagram</a>
+            <a href="mailto:fatouaki.jalal@gmail.com" class="footer-link">Email</a>
+            <a href="https://www.linkedin.com/in/jalal-fatouaki-240b512b4/" target="_blank" class="footer-link">LinkedIn</a>
+          </div>
+        </footer>
+      </div>
+      
+      
+    <script src="script.js"></script>
+</body>
+</html>

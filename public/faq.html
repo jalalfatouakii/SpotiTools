@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="32x32" type="image/png" href="TEST-1.png">
+    <script src="script.js"></script>
+    <title>FAQ</title>
+</head>
+<body>
+    <nav class="navbar" id="naviga">
+        <div class="nav-left">
+            <a href="index.html" class="nav-text">Placeholder</a>
+        </div>
+        <div class="nav-right" id="navir">
+            <span class="hamburger">&#9776;</span>
+            <div class="cocol">
+                <a href="mixup.html" id="btn4" class="nav-btn">Mix-Up!</a>
+            <a href="informations.html" id="btn5" class="nav-btn">Account Informations</a>
+            <a href="features.html" id="btn1" class="nav-btn">Features</a>
+            <a href="faq.html" id="btn2" class="nav-btn">FAQ</a>
+            <a href="contact.html" id="btn3" class="nav-btn">Contact Us</a>
+            </div>
+            
+            
+        </div>
+    </nav>
+    
+    <div id="faq-container" class="faq-container">
+        <h1 id="faq-title" class="faq-title">Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <button class="faq-button">How does this work?</button>
+            <div class="faq-content">
+                <p>This application works by using the Spotify API to fetch and filter playlists based on your preferences.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">Is this safe?</button>
+            <div class="faq-content">
+                <p>Yes, the application follows best practices for security and privacy. Data is handled securely and in accordance with our privacy policy.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">Who made this?</button>
+            <div class="faq-content">
+                <p>This project was developed by Jalal FATOUAKI.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-button">What features can be added soon?</button>
+            <div class="faq-content">
+                <p>We are planning to add features like playlist recommendations, enhanced search options, and more customization tools.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.faq-button');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        document.querySelectorAll('.faq-content').forEach(cont => cont.style.display = 'none');
+                        content.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+    <div class="page-wrapper">
+        <!-- Your existing content goes here -->
+      
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-content">
+            <a href="https://www.instagram.com/jixiolz" target="_blank" class="footer-link">Instagram</a>
+            <a href="mailto:fatouaki.jalal@gmail.com" class="footer-link">Email</a>
+            <a href="https://www.linkedin.com/in/jalal-fatouaki-240b512b4/" target="_blank" class="footer-link">LinkedIn</a>
+          </div>
+        </footer>
+      </div>
+      
+</body>
+</html>
