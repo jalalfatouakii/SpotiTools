@@ -10,6 +10,10 @@
 
 - **Spotify API Integration**: Connect to the Spotify API to access user data.
 - **Playlist Display**: List of playlists created by the user after logging in.
+<<<<<<< HEAD
+=======
+![Screenshot of the playlist selection screen](pictures/playlistselect.png)
+>>>>>>> adb6ef4 (Update README.md)
 - **Account Information**:
   - Created playlists
   - Most played songs
