@@ -2,7 +2,7 @@ const stringurl = 'http://localhost:5001/';
 document.addEventListener('DOMContentLoaded', function () {
     // 'http://localhost:5001/';
     
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';  // Replace with your Spotify Client ID
+    const clientId = config.clientId;  // Replace with your Spotify Client ID
     const redirectUri = `${stringurl}callback`;
     const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
 
