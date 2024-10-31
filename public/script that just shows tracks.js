@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';  // Replace with your Spotify Client ID
+    const clientId = config.clientId;  // Replace with your Spotify Client ID
     const redirectUri = 'http://localhost:5001/callback';
     const scopes = 'playlist-read-private';
 

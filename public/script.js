@@ -693,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     document.getElementById('select-filters-btn').classList.add('hidden');
 
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';  // Replace with your Spotify Client ID
+    const clientId = config.clientId;  // Replace with your Spotify Client ID
     const redirectUri = `${stringurl}callback`;
     const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
     const loginBtn = document.getElementById('login-btn');
@@ -1206,7 +1206,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded',function (){
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';  // Replace with your Spotify Client ID
+    const clientId = config.clientId;  // Replace with your Spotify Client ID
     const redirectUri = `${stringurl}callback`;
     const scopes = 'user-read-email user-read-private user-top-read playlist-read-private';
     const loginBtn = document.getElementById('login-btnn');
