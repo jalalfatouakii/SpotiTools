@@ -14,9 +14,13 @@
   - Created playlists
   - Most played songs
   - Most listened-to artists
+![Screenshot of the informations screen](pictures/info.png)
 - **Playlist Filtering**: Options to filter playlists by artists and genres.
 - **Multiple Filter Selection**: Ability to select multiple filters simultaneously to refine the search.
+![Screenshot of the playlist filtering screen](pictures/playlistfilter.png)
 - **Playlist Compatibility Filter**: Calculate compatibility between multiple playlists based on shared artists and genres.
+- **Playlist Merging**: Merge multiple playlists based on different filters.
+![Screenshot of the playlist merging screen](pictures/merge.png)  
 - **Error Handling**: Ignore errors while loading playlists and continue displaying other data.
 - **Highlight Selected Items**: Selected artists or genres are highlighted in gold, reverting to green when a new item is selected.
 - **Display Songs in a Playlist**: Show details of the songs in a selected playlist.
