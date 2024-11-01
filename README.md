@@ -16,10 +16,10 @@
 - **Highlight Selected Items**: Selected artists or genres are highlighted in gold, reverting to green when a new item is selected.
 - **Display Songs in a Playlist**: Show details of the songs in a selected playlist.
 ![Screenshot of the playlist filtering screen](pictures/playlistfilter.png)
-- **Account Information**:
-  - Created playlists
+- **Account Informations**:
   - Most played songs
   - Most listened-to artists
+  - Sorting by period of time
 ![Screenshot of the informations screen](pictures/info.png)
 - **Playlist Compatibility Filter**: Calculate compatibility between multiple playlists based on shared artists and genres.
 - **Playlist Merging**: Merge multiple playlists based on different filters.
