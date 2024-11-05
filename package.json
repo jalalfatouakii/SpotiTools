@@ -1,10 +1,10 @@
 {
   "name": "spotify-playlist-filterer",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "proxy-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node proxy-server.js"
+    "start": "node proxy-server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,12 +12,14 @@
   "description": "",
   "dependencies": {
     "axios": "^1.7.2",
+    "bower": "^1.7.9",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "request": "^2.88.2",
-    "bower": "^1.7.9",
     "grunt": "^1.0.1",
-    "gulp": "^3.9.1"
+    "gulp": "^5.0.0",
+    "punycode": "^2.3.1",
+    "request": "^2.88.2",
+    "require": "^2.4.20"
   }
 }
