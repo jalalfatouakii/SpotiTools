@@ -1,4 +1,4 @@
-const stringurl = 'https://spotitools.onrender.com';
+const stringurl = 'https://spotitools.onrender.com/';
 let clientId = '';
 async function fetchClientId() {
     try {
