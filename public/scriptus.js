@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', async function () {
 
     let valeur = 0;
-    const stringurl = 'https://spotitools.onrender.com';
+    const stringurl = 'https://spotitools.onrender.com/';
     document.getElementById('select-filters-btn').classList.add('hidden');
     await fetchClientId();
       // Replace with your Spotify Client ID
