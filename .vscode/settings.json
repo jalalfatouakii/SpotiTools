@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "undefined/subscriptions/4366da1c-f7c8-4e05-a059-2b0a3cd36173/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/SpotiTools",
-    "appService.deploySubpath": "."
-}
