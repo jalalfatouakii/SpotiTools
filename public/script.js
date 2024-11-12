@@ -1,5 +1,5 @@
 
-const stringurl = 'http://localhost:5001/';
+const stringurl = 'https://spotitools.onrender.com';
 let clientId = ''; // Global variable to store the fetched client ID
 
 async function fetchClientId() {
