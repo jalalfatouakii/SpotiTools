@@ -8,8 +8,8 @@ async function fetchClientId() {
         throw new Error(`Network response was not ok: ${response.statusText}`);
       }
       const data = await response.json();
-      console.log(data);
-      console.log(data.client_id)
+      //console.log(data);
+      //console.log(data.client_id)
       clientId = data.client_id; // Assuming the response has a "clientId" field
       //console.log('Client ID fetched successfully:', clientId);
     } catch (error) {
