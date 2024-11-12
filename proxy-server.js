@@ -3,8 +3,7 @@ const request = require('request');
 const path = require('path');
 const app = express();
 const PORT = 5001;
-const hamid =require('dotenv').config()
-console.log(process.env) // remove this after you've confirmed it is working
+const hamid =require('dotenv').config()// remove this after you've confirmed it is working
 
 app.use(express.static(path.join(__dirname, 'public')));
 

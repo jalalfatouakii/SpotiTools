@@ -1,8 +1,26 @@
 const stringurl = 'http://localhost:5001/';
-document.addEventListener('DOMContentLoaded', function () {
+let clientId = '';
+async function fetchClientId() {
+    try {
+      
+      const response = await fetch(`${stringurl}api/client-id`);
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      const data = await response.json();
+      
+      clientId = data.client_id; // Assuming the response has a "clientId" field
+      //console.log('Client ID fetched successfully:', clientId);
+    } catch (error) {
+      console.error('Error fetching Client ID:', error);
+    }
+  }
+
+document.addEventListener('DOMContentLoaded',async function () {
     // 'http://localhost:5001/';
     
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';   // Replace with your Spotify Client ID
+      // Replace with your Spotify Client ID
+    await fetchClientId();
     const redirectUri = `${stringurl}callback`;
     const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
 
@@ -285,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         filteredTracksUris = allTracks.filter(item => {
             const trackNameMatch = item.track.name.toLowerCase().includes(inputText);
-            console.log(selectedFilters.artists, "full");
+            //console.log(selectedFilters.artists, "full");
             
             let artistMatch;
             if (sortingselect) {
@@ -325,13 +343,13 @@ document.addEventListener('DOMContentLoaded', function () {
             selectSort.classList.remove('hidden');
             selectSortA.classList.remove('hidden');
             afficheListe.classList.remove('hidden')
-            console.log("hhh");
-            console.log(filteredTracksUris,selectedFilters);
+            //console.log("hhh");
+            //console.log(filteredTracksUris,selectedFilters);
 
         } else {
             savePlaylistBtn.classList.add('hidden');
             afficheListe.classList.add('hidden');
-            console.log("ouin");
+            //console.log("ouin");
         }
     }
     
@@ -561,13 +579,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
 
     let valeur = 0;
     const stringurl = 'http://localhost:5001/';
     document.getElementById('select-filters-btn').classList.add('hidden');
-
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';   // Replace with your Spotify Client ID
+    await fetchClientId();
+      // Replace with your Spotify Client ID
     const redirectUri = `${stringurl}callback`;
     const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
     const loginBtn = document.getElementById('login-btn');
@@ -676,7 +694,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('next-btn').addEventListener('click', async function (e) {
         e.preventDefault();
         const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
-        console.log(`Selected Filter: ${selectedFilter}`); // For demonstration, logs the selected filter
+        //console.log(`Selected Filter: ${selectedFilter}`); // For demonstration, logs the selected filter
     
         const playlistIds = getPlaylistIdsFromInputs();
         allTracks = []; // Reset before fetching
@@ -687,7 +705,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Wait for all promises to resolve
         await Promise.all(fetchPromises);
     
-        console.log("All fetched tracks:", allTracks);
+        //console.log("All fetched tracks:", allTracks);
     
         if (allTracks.length > 0) {
             saveFilteredPlaylist();
@@ -844,7 +862,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 }
                             });
 
-                            console.log("Tracks for Matchy Filter: ", matchyTracksList);
+                            //console.log("Tracks for Matchy Filter: ", matchyTracksList);
                         });
                     }
     
@@ -856,8 +874,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         offset += limit;
                         fetchTracks();
                     } else {
-                        console.log(`Fetched tracks for playlist ${playlistId}:`, allTracks);
-                        console.log("yiii", sharedTracks)
+                        //(`Fetched tracks for playlist ${playlistId}:`, allTracks);
+                        //console.log("yiii", sharedTracks)
                         
                         resolve();  // Resolve the promise when fetching for this playlist is done
                     }
@@ -965,7 +983,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function saveFilteredPlaylist() {
         const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
-        console.log(selectedFilter)
+        //console.log(selectedFilter)
         const newPlaylistName = `Mixed UP! by SpotiTools (${selectedFilter})`;
         const descr = `This playlist was made using SpotiTools with the ${selectedFilter} filter`
         fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
@@ -997,7 +1015,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
     
-        console.log("Track URIs to add:", trackUris);
+        //console.log("Track URIs to add:", trackUris);
     
         const trackUrisChunked = [];
         for (let i = 0; i < trackUris.length; i += 100) {
@@ -1034,7 +1052,7 @@ document.addEventListener('DOMContentLoaded', function () {
         matchinessPercentageElement.style.fontSize = '18px';
         matchinessPercentageElement.style.fontWeight = 'bold';
         matchinessPercentageElement.style.marginTop = '20px';
-        console.log(allTracks.length, totalTracks)
+        //console.log(allTracks.length, totalTracks)
         const matchinessPercentage = (allTracks.length / totalTracks) * 100;
         //matchinessPercentageElement.innerText = `Matchiness: ${matchinessPercentage.toFixed(2)}%`;
         //document.getElementById("changement").appendChild(matchinessPercentageElement);
@@ -1079,8 +1097,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-document.addEventListener('DOMContentLoaded',function (){
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';   // Replace with your Spotify Client ID
+document.addEventListener('DOMContentLoaded',async function (){
+      // Replace with your Spotify Client ID
+    await fetchClientId();
     const redirectUri = `${stringurl}callback`;
     const scopes = 'user-read-email user-read-private user-top-read playlist-read-private';
     const loginBtn = document.getElementById('login-btnn');
@@ -1125,7 +1144,7 @@ document.addEventListener('DOMContentLoaded',function (){
           return response.json();
         })
         .then(data => {
-            console.log(data);  // Handle the response data here
+           // console.log(data);  // Handle the response data here
           // Select the div to display user info
             const userInfoDiv = document.getElementById('userInfo');
             const profileImageUrl = data.images && data.images.length > 0 ? data.images[1].url : 'default-image-url.jpg';
@@ -1161,7 +1180,7 @@ document.addEventListener('DOMContentLoaded',function (){
             })
             .then(response => response.json())
             .then(artistData => {
-                console.log('Most listened artist:', artistData.items);
+               // console.log('Most listened artist:', artistData.items);
                 
                 const artistInfo = document.createElement('div');
                 const hamid = document.createElement('h3');
@@ -1213,7 +1232,7 @@ document.addEventListener('DOMContentLoaded',function (){
             })
             .then(response => response.json())
             .then(trackData => {
-                console.log('Most listened track:', trackData.items);
+                //console.log('Most listened track:', trackData.items);
                 const josh = document.createElement('h3');
                 const trackInfo = document.createElement('div');
                 trackInfo.classList.add("helloi");
@@ -1263,7 +1282,7 @@ document.addEventListener('DOMContentLoaded',function (){
             })
             .then(response => response.json())
             .then(playlistData => {
-                console.log('Most recent playlist:', playlistData.items);
+               // console.log('Most recent playlist:', playlistData.items);
                 const issa = document.createElement('h3');
                 const playlistInfo = document.createElement('div');
                 playlistInfo.classList.add("helloi");

@@ -1,6 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
+const stringurl = 'http://localhost:5001/';
+let clientId = '';
+async function fetchClientId() {
+    try {
+      
+      const response = await fetch(`${stringurl}api/client-id`);
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      const data = await response.json();
+      //console.log(data)
+      clientId = data.client_id; // Assuming the response has a "clientId" field
+      //console.log('Client ID fetched successfully:', clientId);
+    } catch (error) {
+      console.error('Error fetching Client ID:', error);
+    }
+  }
+
+document.addEventListener('DOMContentLoaded',async function () {
     
-    const clientId = 'b758f477560242af9bd36645de2f7d0f';   // Replace with your Spotify Client ID
+    await fetchClientId();
+       // Replace with your Spotify Client ID
     const redirectUri = 'http://192.168.1.144:5001/callback';
     const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
 
