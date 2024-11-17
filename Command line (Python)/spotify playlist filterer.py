@@ -4,8 +4,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth, SpotifyClientCredentials
 from spotipy.exceptions import SpotifyException
 
-CLIENT_ID = "b758f477560242af9bd36645de2f7d0f"
-CLIENT_SECRET = "32f992c4b9cf4b288feeb7853ce9d60f"
+CLIENT_ID = " add your client id"
+CLIENT_SECRET = "add your client secret"
 SCOPE = 'playlist-read-private playlist-modify-public'
 REDIRECT_URI = 'http://localhost:5001/callback'
 
