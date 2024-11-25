@@ -56,13 +56,27 @@ To install and run this project locally:
    ```bash
    npm install
    ```
+   
+4. Replace stringurl with your url or localhost:5001 if hosted locally
+   ```bash
+   stringurl = YOUR_URL
+   ```
+   
+5. Replace the API endpoint by your own to your Spotify API Key
+   ```bash
+   const response = await fetch(YOUR_END_POINT)
+   ```
 
-4. Start the application:
+6. Start the application:
    ```bash
    node proxy-server.js
    ```
 
-5. Launch the application:
+7. Launch the application:
+   ```bash
+   https://your-url.com
+   ```
+   Or, if locally :
    ```bash
    localhost:5001
    ```
