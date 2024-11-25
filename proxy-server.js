@@ -7,10 +7,6 @@ const hamid =require('dotenv').config()// remove this after you've confirmed it 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/api/client-id', (req, res) => {
-    res.json({ client_id: process.env.CLIENT_ID });
-});
-
 app.get('/callback', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'callback.html'));
 });
