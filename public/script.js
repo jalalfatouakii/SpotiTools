@@ -161,7 +161,48 @@ document.addEventListener('DOMContentLoaded', async function () {
         selectSort.classList.add('hidden');
         selectSortA.classList.add('hidden');
     });
-
+    
+    function fetchPlaylists(accessToken) {
+        fetch(`${stringurl}playlists?access_token=${accessToken}`)
+            .then(response => response.json())
+            .then(data => {
+                const playlists = data.items;
+                playlistsContainer.classList.remove('hidden');
+                
+                // Create the layout for playlists with image, name, and song count
+                playlistsList.innerHTML = playlists.map(playlist => {
+                    const playlistImage = playlist.images[0]?.url || 'default-image.jpg'; // Fallback in case no image is available
+                    const songCount = playlist.tracks.total; // Get the number of tracks
+                    
+                    return `
+                        <div class="playlist-box" data-playlist-id="${playlist.id}">
+                            <img src="${playlistImage}" alt="${playlist.name}" class="playlist-image">
+                            <div class="playlist-info">
+                                <h3>${playlist.name}</h3>
+                                <p>${songCount} songs</p>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+    
+                // Add event listeners to each playlist box
+                document.querySelectorAll('.playlist-box').forEach(box => {
+                    box.addEventListener('click', function () {
+                        const playlistId = this.getAttribute('data-playlist-id');
+                        
+                        currentPlaylistName = this.getAttribute('data-playlist-name');
+                        fetchAllTracks(accessToken, playlistId);
+                    });
+                });
+    
+                loginBtn.classList.add('hidden');
+                txtlog.classList.add('hidden');
+                titre.classList.add('hidden');
+            })
+            .catch(error => console.error('Error fetching playlists:', error));
+    }
+    
+   /*
     function fetchPlaylists(accessToken) {
         fetch(`${stringurl}playlists?access_token=${accessToken}`)
             .then(response => response.json())
@@ -187,6 +228,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             })
             .catch(error => console.error('Error fetching playlists:', error));
     }
+    */
 
     function fetchAllTracks(accessToken, playlistId) {
         const limit = 100;
