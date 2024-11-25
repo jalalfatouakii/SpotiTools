@@ -1262,7 +1262,7 @@ document.addEventListener('DOMContentLoaded',async function (){
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-    let timeRange = 'long_term';
+    let timeRange = 'short_term';
 
     function getThings(accessToken){
         const headers = {
