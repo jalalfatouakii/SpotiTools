@@ -793,7 +793,7 @@ document.addEventListener('DOMContentLoaded',async function () {
        // Replace with your Spotify Client ID
     await fetchClientId();
     const redirectUri = `${stringurl}callback`;
-    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
+    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private user-read-email user-read-private user-top-read playlist-read-private';
     const loginBtn = document.getElementById('login-btn');
     let accessToken = '';
     let matchinessPercentage = 0
@@ -1307,7 +1307,7 @@ document.addEventListener('DOMContentLoaded',async function (){
       // Replace with your Spotify Client ID
     await fetchClientId();
     const redirectUri = `${stringurl}callback`;
-    const scopes = 'user-read-email user-read-private user-top-read playlist-read-private';
+    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private user-read-email user-read-private user-top-read playlist-read-private';
     const loginBtn = document.getElementById('login-btnn');
     let accessToken = '';
     checkinfos()

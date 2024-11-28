@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',async function () {
       // Replace with your Spotify Client ID
     await fetchClientId();
     const redirectUri = `${stringurl}callback`;
-    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
+    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private user-read-email user-read-private user-top-read playlist-read-private';
 
     const loginBtn = document.getElementById('login-btn');
     const titre = document.getElementById('titre');
@@ -585,7 +585,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     await fetchClientId();
       // Replace with your Spotify Client ID
     const redirectUri = `${stringurl}callback`;
-    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
+    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private user-read-email user-read-private user-top-read playlist-read-private';
     const loginBtn = document.getElementById('login-btn');
     let accessToken = '';
     let matchinessPercentage = 0
@@ -889,24 +889,45 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
     
     
-
-    loginBtn.addEventListener('click', function () {
-        const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
-        const authWindow = window.open(authUrl, 'SpotifyAuth', 'width=600,height=400');
-
-        window.addEventListener('message', function (event) {
-            if (event.origin !== window.location.origin) {
-                return;
-            }
-            accessToken = event.data.access_token;
-            if (accessToken) {
-                authWindow.close();
+    function saveAccessToken(token) {
+        localStorage.setItem('accessToken', token);
+    }
+    function getAccessToken() {
+        return localStorage.getItem('accessToken');
+    }
+    function checkAndFetchPlaylists() {
+        const accessToken = getAccessToken();
+        if (accessToken) {
+            authWindow.close();
                 fetchUserId(accessToken);
                 loginBtn.classList.add("hidden")
                 document.getElementById('select-filters-btn').classList.remove('hidden');
-            }
-        }, false);
-    });
+        } else {
+            login()
+        }
+    }
+    checkAndFetchPlaylists()
+    function login(){
+    
+        loginBtn.addEventListener('click', function () {
+            const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
+            const authWindow = window.open(authUrl, 'SpotifyAuth', 'width=600,height=400');
+
+            window.addEventListener('message', function (event) {
+                if (event.origin !== window.location.origin) {
+                    return;
+                }
+                accessToken = event.data.access_token;
+                if (accessToken) {
+                    saveAccessToken(accessToken);
+                    authWindow.close();
+                    fetchUserId(accessToken);
+                    loginBtn.classList.add("hidden")
+                    document.getElementById('select-filters-btn').classList.remove('hidden');
+                }
+            }, false);
+        });
+    }
 
 
     
@@ -1099,7 +1120,7 @@ document.addEventListener('DOMContentLoaded',async function (){
       // Replace with your Spotify Client ID
     await fetchClientId();
     const redirectUri = `${stringurl}callback`;
-    const scopes = 'user-read-email user-read-private user-top-read playlist-read-private';
+    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private user-read-email user-read-private user-top-read playlist-read-private';
     const loginBtn = document.getElementById('login-btnn');
     let accessToken = '';
     loginBtn.addEventListener('click', function () {
