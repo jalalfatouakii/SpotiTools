@@ -1,6 +1,9 @@
 
+
 const stringurl = 'https://spotitools.onrender.com/';
+//const stringurl = 'http://localhost:5001/';
 let clientId = ''; // Global variable to store the fetched client ID
+
 
 async function fetchClientId() {
     try {
@@ -20,6 +23,7 @@ async function fetchClientId() {
     }
   }
 
+
 document.addEventListener('DOMContentLoaded', async function () {
     // 'http://localhost:5001/';
     // Replace with your Spotify Client ID
@@ -28,8 +32,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       // Call the fetchClientId function to ensure client ID is fetched before proceeding
     await fetchClientId();
     
+    
     const redirectUri = `${stringurl}callback`;
-    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private';
+    const scopes = 'playlist-read-private playlist-modify-public playlist-modify-private user-read-email user-read-private user-top-read playlist-read-private';
     
     
 
@@ -71,22 +76,42 @@ document.addEventListener('DOMContentLoaded', async function () {
     let artistGenres = {};
     let selectedFilters = { artists: [], genres: [] }; // Store selected filters
 
-    loginBtn.addEventListener('click', function () {
-        const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
-        const authWindow = window.open(authUrl, 'SpotifyAuth', 'width=600,height=400');
+    function saveAccessToken(token) {
+        localStorage.setItem('accessToken', token);
+    }
+    function getAccessToken() {
+        return localStorage.getItem('accessToken');
+    }
+    function checkAndFetchPlaylists() {
+        const accessToken = getAccessToken();
+        if (accessToken) {
+            fetchPlaylists(accessToken);
+            fetchUserId(accessToken);
+        } else {
+            login()
+        }
+    }
+    checkAndFetchPlaylists()
+    function login(){
+    
+        loginBtn.addEventListener('click', function () {
+            const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
+            const authWindow = window.open(authUrl, 'SpotifyAuth', 'width=600,height=400');
 
-        window.addEventListener('message', function (event) {
-            if (event.origin !== window.location.origin) {
-                return;
-            }
-            accessToken = event.data.access_token;
-            if (accessToken) {
-                fetchPlaylists(accessToken);
-                authWindow.close();
-                fetchUserId(accessToken);
-            }
-        }, false);
-    });
+            window.addEventListener('message', function (event) {
+                if (event.origin !== window.location.origin) {
+                    return;
+                }
+                accessToken = event.data.access_token;
+                if (accessToken) {
+                    saveAccessToken(accessToken);
+                    fetchPlaylists(accessToken);
+                    authWindow.close();
+                    fetchUserId(accessToken);
+                }
+            }, false);
+        });
+    }
 
     changePlaylistBtn.addEventListener('click', function () {
         tracksList.innerHTML = '';  // Clear the displayed tracks
@@ -1285,24 +1310,46 @@ document.addEventListener('DOMContentLoaded',async function (){
     const scopes = 'user-read-email user-read-private user-top-read playlist-read-private';
     const loginBtn = document.getElementById('login-btnn');
     let accessToken = '';
-    loginBtn.addEventListener('click', function () {
-        const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
-        const authWindow = window.open(authUrl, 'SpotifyAuth', 'width=600,height=400');
+    checkinfos()
+    function saveAccessToken(token) {
+        localStorage.setItem('accessToken', token);
+    }
+    function getAccessToken() {
+        return localStorage.getItem('accessToken');
+    }
+    function checkinfos() {
+        const accessToken = getAccessToken();
+        if (accessToken) {
+            loginBtn.classList.add("hidden");
+            console.log("hi")
+            getThings(accessToken);
+        } else {
+            login()
+        }
+    }
+    
+    function login(){
+    
+        loginBtn.addEventListener('click', function () {
+            const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
+            const authWindow = window.open(authUrl, 'SpotifyAuth', 'width=600,height=400');
 
-        window.addEventListener('message', function (event) {
-            if (event.origin !== window.location.origin) {
-                return;
-            }
-            accessToken = event.data.access_token;
-            if (accessToken) {
-                authWindow.close();
-                
-                loginBtn.classList.add("hidden");
-                getThings(accessToken);
-                
-            }
-        }, false);
-    });
+            window.addEventListener('message', function (event) {
+                if (event.origin !== window.location.origin) {
+                    return;
+                }
+                accessToken = event.data.access_token;
+                if (accessToken) {
+                    saveAccessToken(accessToken);
+                    authWindow.close();
+                    loginBtn.classList.add("hidden");
+                    getThings(accessToken);
+                }
+            }, false);
+        });
+    }
+
+    
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -1332,6 +1379,7 @@ document.addEventListener('DOMContentLoaded',async function (){
             const userInfoDiv = document.getElementById('userInfo');
             const profileImageUrl = data.images && data.images.length > 0 ? data.images[0].url : 'default-image-url.jpg';
             const txto = data.product;
+            console.log(data)
             txti = capitalizeFirstLetter(txto);
             
             
