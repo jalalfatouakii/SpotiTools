@@ -898,7 +898,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     function checkAndFetchPlaylists() {
         const accessToken = getAccessToken();
         if (accessToken) {
-            authWindow.close();
                 fetchUserId(accessToken);
                 loginBtn.classList.add("hidden")
                 document.getElementById('select-filters-btn').classList.remove('hidden');
