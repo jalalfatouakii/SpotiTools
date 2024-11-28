@@ -168,11 +168,12 @@ document.addEventListener('DOMContentLoaded', async function () {
             .then(data => {
                 const playlists = data.items;
                 playlistsContainer.classList.remove('hidden');
-                if (!playlist) {
-                    return ''; // Skip this playlist and move to the next one
-                }
+                
                 // Create the layout for playlists with image, name, and song count
                 playlistsList.innerHTML = playlists.map(playlist => {
+                    if (!playlist) {
+                        return ''; // Skip this playlist and move to the next one
+                    }
                     const playlistImage = playlist.images[0]?.url || 'default-image.jpg'; // Fallback in case no image is available
                     const songCount = playlist.tracks.total; // Get the number of tracks
                     
