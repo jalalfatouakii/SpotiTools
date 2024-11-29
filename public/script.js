@@ -90,25 +90,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             login()
         }
     }
-    function refreshToken() {
-        const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
-        const authWindow = window.open(authUrl, 'SpotifyAuth', 'width=600,height=400');
     
-        window.addEventListener('message', function (event) {
-            if (event.origin !== window.location.origin) {
-                return;
-            }
-            const accessToken = event.data.access_token;
-            if (accessToken) {
-                saveAccessToken(accessToken);
-                fetchPlaylists(accessToken);
-                fetchUserId(accessToken);
-                authWindow.close();
-            }
-        }, false);
-    }
     checkAndFetchPlaylists()
-    setInterval(refreshToken, 10000);
     function login(){
     
         loginBtn.addEventListener('click', function () {
@@ -249,7 +232,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 txtlog.classList.add('hidden');
                 titre.classList.add('hidden');
             })
-            .catch(error => console.error(`Error fetching playlists ${playlists}:`, error));
+            .catch(error => console.error(`Error fetching playlists ${data}:`, error));
     }
     
    /*
