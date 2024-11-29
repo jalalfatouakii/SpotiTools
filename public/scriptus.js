@@ -1,4 +1,4 @@
-const stringurl = 'https://filterify.me/';
+const stringurl = 'https://www.filterify.me/';
 let clientId = '';
 async function fetchClientId() {
     try {
@@ -580,7 +580,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', async function () {
 
     let valeur = 0;
-    const stringurl = 'https://filterify.me/';
+    const stringurl = 'https://www.filterify.me/';
     document.getElementById('select-filters-btn').classList.add('hidden');
     await fetchClientId();
       // Replace with your Spotify Client ID

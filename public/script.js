@@ -1,6 +1,6 @@
 
 
-const stringurl = 'https://filterify.me/';
+const stringurl = 'https://www.filterify.me/';
 //const stringurl = 'http://localhost:5001/';
 let clientId = ''; // Global variable to store the fetched client ID
 
