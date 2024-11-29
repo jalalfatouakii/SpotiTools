@@ -98,7 +98,16 @@ document.addEventListener('DOMContentLoaded', async function () {
         clearAccessToken();
         window.location.reload(); // Refresh the page
     });
-    checkAndFetchPlaylists()
+    document.addEventListener('DOMContentLoaded', function () {
+        const sessionFlag = sessionStorage.getItem('sessionFlag');
+    
+        if (!sessionFlag) {
+            clearAccessToken(); // Clear the token on the first load in a new session
+            sessionStorage.setItem('sessionFlag', 'true'); // Set the session flag
+        }
+    
+        checkAndFetchPlaylists();
+    });
     function login(){
     
         loginBtn.addEventListener('click', function () {
