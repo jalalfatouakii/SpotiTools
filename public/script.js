@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const selectSortA = document.getElementById('select-sort-g');
     const savePlaylistBtn = document.createElement('button');
     const clearFilterBtn = document.createElement('button'); // Clear filter button
+    const logoutBtn = document.getElementById('logout-btn'); // Logout button
 
     let sortingselect = true;
     const afficheListe = document.getElementById('affiche');
