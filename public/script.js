@@ -229,8 +229,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                 document.querySelectorAll('.playlist-box').forEach(box => {
                     box.addEventListener('click', function () {
                         const playlistId = this.getAttribute('data-playlist-id');
-                        
-                        currentPlaylistName = this.getAttribute('data-playlist-name');
+                        const playlistName = this.querySelector('.playlist-info h3').textContent; 
+                        currentPlaylistName = playlistName;
                         fetchAllTracks(accessToken, playlistId);
                     });
                 });
