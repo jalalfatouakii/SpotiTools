@@ -90,7 +90,13 @@ document.addEventListener('DOMContentLoaded', async function () {
             login()
         }
     }
-    
+    function clearAccessToken() {
+        localStorage.removeItem('accessToken');
+    }
+    logoutBtn.addEventListener('click', function () {
+        clearAccessToken();
+        window.location.reload(); // Refresh the page
+    });
     checkAndFetchPlaylists()
     function login(){
     
@@ -112,7 +118,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             }, false);
         });
     }
-
+    
     changePlaylistBtn.addEventListener('click', function () {
         tracksList.innerHTML = '';  // Clear the displayed tracks
         tracksContainer.classList.add('hidden');
@@ -232,7 +238,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 txtlog.classList.add('hidden');
                 titre.classList.add('hidden');
             })
-            .catch(error => console.error(`Error fetching playlists ${data}:`, error));
+            .catch(error => console.error(`Error fetching playlists ${response}:`, error));
     }
     
    /*
