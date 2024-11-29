@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 txtlog.classList.add('hidden');
                 titre.classList.add('hidden');
             })
-            .catch(error => console.error('Error fetching playlists:', error));
+            .catch(error => console.error(`Error fetching playlists ${playlist}:`, error));
     }
     
    /*
