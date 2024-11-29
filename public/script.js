@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     const songCount = playlist.tracks.total; // Get the number of tracks
                     console.log(songCount)
                     return `
-                        <div class="playlist-box" data-playlist-id="${playlist.id}">
+                        <div class="playlist-box" data-playlist-id="${playlist.id} data-playlist-name="${playlist.name}">
                             <img src="${playlistImage}" alt="${playlist.name}" class="playlist-image">
                             <div class="playlist-info">
                                 <h3>${playlist.name}</h3>
