@@ -3,8 +3,6 @@
 const stringurl = 'https://filterify.me/';
 //const stringurl = 'http://localhost:5001/';
 let clientId = ''; // Global variable to store the fetched client ID
-const responsee = await fetch("https://backend-spotitools.onrender.com/api/hello");
-console.log(responsee)
 
 async function fetchClientId() {
     try {
