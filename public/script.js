@@ -192,6 +192,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             .then(data => {
                 const playlists = data.items;
                 playlistsContainer.classList.remove('hidden');
+                console.log(playlists)
                 
                 // Create the layout for playlists with image, name, and song count
                 playlistsList.innerHTML = playlists.map(playlist => {
