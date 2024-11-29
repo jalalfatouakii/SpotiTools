@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     
                     const playlistImage = playlist.images[0]?.url || 'default-image.png'; // Fallback in case no image is available
                     const songCount = playlist.tracks.total; // Get the number of tracks
-                    
+                    console.log(songCount)
                     return `
                         <div class="playlist-box" data-playlist-id="${playlist.id}">
                             <img src="${playlistImage}" alt="${playlist.name}" class="playlist-image">
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 txtlog.classList.add('hidden');
                 titre.classList.add('hidden');
             })
-            .catch(error => console.error(`Error fetching playlists ${response}:`, error));
+            .catch(error => console.error('Error fetching playlists:', error));
     }
     
    /*
