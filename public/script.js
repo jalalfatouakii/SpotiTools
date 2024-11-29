@@ -202,7 +202,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     if (playlist == null) {
                         return ''; // Skip this playlist and move to the next one
                     }
-                    const playlistImage = playlist.images[0]?.url || 'default-image.jpg'; // Fallback in case no image is available
+                    
+                    const playlistImage = playlist.images[0]?.url || 'default-image.png'; // Fallback in case no image is available
                     const songCount = playlist.tracks.total; // Get the number of tracks
                     
                     return `
