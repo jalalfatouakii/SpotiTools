@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const savePlaylistBtn = document.createElement('button');
     const clearFilterBtn = document.createElement('button'); // Clear filter button
     const logoutBtn = document.getElementById('logout-btn'); // Logout button
+    const logoutBtn2 = document.getElementById('logout-btn2');
 
     let sortingselect = true;
     const afficheListe = document.getElementById('affiche');
@@ -98,16 +99,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         clearAccessToken();
         window.location.reload(); // Refresh the page
     });
-    document.addEventListener('DOMContentLoaded', function () {
-        const sessionFlag = sessionStorage.getItem('sessionFlag');
-    
-        if (!sessionFlag) {
-            clearAccessToken(); // Clear the token on the first load in a new session
-            sessionStorage.setItem('sessionFlag', 'true'); // Set the session flag
-        }
-    
-        checkAndFetchPlaylists();
+    logoutBtn2.addEventListener('click', function () {
+        clearAccessToken();
+        window.location.reload(); // Refresh the page
     });
+    checkAndFetchPlaylists()
     function login(){
     
         loginBtn.addEventListener('click', function () {
