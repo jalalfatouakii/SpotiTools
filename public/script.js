@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 
                 // Create the layout for playlists with image, name, and song count
                 playlistsList.innerHTML = playlists.map(playlist => {
-                    if (!playlist) {
+                    if (!playlist || !playlist.images) {
                         return ''; // Skip this playlist and move to the next one
                     }
                     if (playlist == null) {
