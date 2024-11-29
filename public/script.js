@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     const songCount = playlist.tracks.total; // Get the number of tracks
                     console.log(songCount)
                     return `
-                        <div class="playlist-box" data-playlist-id="${playlist.id} data-playlist-name="${playlist.name}">
+                        <div class="playlist-box" data-playlist-id="${playlist.id}">
                             <img src="${playlistImage}" alt="${playlist.name}" class="playlist-image">
                             <div class="playlist-info">
                                 <h3>${playlist.name}</h3>
@@ -279,6 +279,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             fetch(`${stringurl}tracks?access_token=${accessToken}&playlist_id=${playlistId}&limit=${limit}&offset=${offset}`)
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data,data.items)
                     allTracks = allTracks.concat(data.items.filter(item => 
                         item.track && 
                         item.track.artists && 
