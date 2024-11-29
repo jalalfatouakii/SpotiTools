@@ -506,7 +506,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                 document.getElementById('tracks-container').classList.add('hidden');
                 document.getElementById('clear-filter-btn').classList.add('hidden');
                 // Clear selected variables
-                texto = '';
                 selectedFilters = { artists: [], genres: [] };
             })
             .catch(error => console.error('Error creating new playlist:', error));
