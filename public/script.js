@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         fetch(`${stringurl}playlists?access_token=${accessToken}`)
             .then(response => response.json())
             .then(data => {
-                const playlists = data.items;
+                const playlists = data.items.filter(playlist => playlist !== null); // Filter out null values
                 playlistsContainer.classList.remove('hidden');
                 console.log(playlists)
                 
