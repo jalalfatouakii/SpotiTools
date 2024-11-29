@@ -1,8 +1,8 @@
-# SpotiTools
+# Filterify
 
 ## Description
 
-**SpotiTools** is a web application designed to filter and merge Spotify playlists while providing users with detailed information about their Spotify account.  With advanced features to explore artists, genres, and compatibility between multiple playlists, this application aims to enhance the listening experience for Spotify users.
+**Filterify** is a web application designed to filter and merge Spotify playlists while providing users with detailed information about their Spotify account.  With advanced features to explore artists, genres, and compatibility between multiple playlists, this application aims to enhance the listening experience for Spotify users.
 
 ## Features
 
@@ -35,8 +35,8 @@
 
 ## Visit the Website
 
-You can visit the live version of SpotiTools at:  
-[https://spotitools.onrender.com](https://spotitools.onrender.com)
+You can visit the live version of Filterify at:  
+[https://www.filterify.me](https://www.filterify.me)
 
 ## Installation
 
@@ -44,12 +44,12 @@ To install and run this project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/jalalfatouakii/SpotiTools.git
+   git clone https://github.com/jalalfatouakii/Filterify.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd SpotiTools
+   cd Filterify
    ```
 
 3. Install dependencies (if applicable):
