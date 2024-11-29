@@ -1,6 +1,6 @@
 
 
-const stringurl = 'https://spotitools.onrender.com/';
+const stringurl = 'https://filterify.me/';
 //const stringurl = 'http://localhost:5001/';
 let clientId = ''; // Global variable to store the fetched client ID
 
@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             },
             body: JSON.stringify({
                 name: newPlaylistName,
-                description: `Filtered playlist of ${currentPlaylistName} by ${formatText(selectedFilters)}. Made using SpotiTools !`,
+                description: `Filtered playlist of ${currentPlaylistName} by ${formatText(selectedFilters)}. Made using Filterify !`,
                 public: false
             })
         })
@@ -1190,8 +1190,8 @@ document.addEventListener('DOMContentLoaded',async function () {
     function saveFilteredPlaylist() {
         const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
         //console.log(selectedFilter)
-        const newPlaylistName = `Mixed UP! by SpotiTools (${selectedFilter})`;
-        const descr = `This playlist was made using SpotiTools with the ${selectedFilter} filter`
+        const newPlaylistName = `Mixed UP! by Filterify (${selectedFilter})`;
+        const descr = `This playlist was made using Filterify with the ${selectedFilter} filter`
         fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
             method: 'POST',
             headers: {
