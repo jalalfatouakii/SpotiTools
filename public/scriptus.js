@@ -713,6 +713,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
     
     function fetchAllTracks(accessToken, playlistId) {
+        console.log(accessToken)
         return new Promise((resolve, reject) => {
             const limit = 100;
             let offset = 0;
