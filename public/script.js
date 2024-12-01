@@ -462,6 +462,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (!anyFilterSelected) {
             tracksList.innerHTML = '';
             savePlaylistBtn.classList.add('hidden');
+            nonechosen.classList.remove('hidden');
             return;
         }
         if (anyFilterSelected){
