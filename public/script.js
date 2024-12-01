@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const clearFilterBtn = document.createElement('button'); // Clear filter button
     const logoutBtn = document.getElementById('logout-btn'); // Logout button
     const logoutBtn2 = document.getElementById('logout-btn2');
+    const nonechosen = document.getElementById('track-none')
 
     let sortingselect = true;
     const afficheListe = document.getElementById('affiche');
@@ -462,6 +463,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             tracksList.innerHTML = '';
             savePlaylistBtn.classList.add('hidden');
             return;
+        }
+        if (anyFilterSelected){
+            nonechosen.classList.add('hidden');
         }
     
         // Display tracks if filters are active
