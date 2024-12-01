@@ -592,6 +592,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     let totalTracks = 0;
     let matchingTracks = 0;
 
+    function clearAccessToken() {
+        localStorage.removeItem('accessToken');
+    }
+    const logoutBtn2 = document.getElementById('logout-btn2');
+    logoutBtn2.addEventListener('click', function () {
+        clearAccessToken();
+        window.location.reload(); // Refresh the page
+    });
 
     document.getElementById('adding').addEventListener('click', function (e) {
         e.preventDefault(); // Prevent form submission
@@ -713,7 +721,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
     
     function fetchAllTracks(accessToken, playlistId) {
-        console.log(accessToken)
         return new Promise((resolve, reject) => {
             const limit = 100;
             let offset = 0;

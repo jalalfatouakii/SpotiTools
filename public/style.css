@@ -817,3 +817,8 @@ body {
 #logout-btn:hover , #logout-btn2:hover {
     background-color: #d71e1e; /* Slightly lighter green on hover */
 }
+.lplidi{
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
