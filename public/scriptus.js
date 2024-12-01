@@ -595,7 +595,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     function clearAccessToken() {
         localStorage.removeItem('accessToken');
     }
-    const logoutBtn2 = document.getElementById('logout-btn2');
+    const logoutBtn2 = document.getElementById('logout-btn');
     logoutBtn2.addEventListener('click', function () {
         clearAccessToken();
         window.location.reload(); // Refresh the page
