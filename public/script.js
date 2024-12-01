@@ -103,6 +103,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         clearAccessToken();
         window.location.reload(); // Refresh the page
     });
+    if (!getAccessToken()) {
+        logoutBtn2.classList.add('hidden');
+    }
     checkAndFetchPlaylists()
     function login(){
     
@@ -1366,8 +1369,14 @@ document.addEventListener('DOMContentLoaded',async function (){
             }, false);
         });
     }
-
-    
+    function clearAccessToken() {
+        localStorage.removeItem('accessToken');
+    }
+    const logoutBtn2 = document.getElementById('logout-btn2');
+    logoutBtn2.addEventListener('click', function () {
+        clearAccessToken();
+        window.location.reload(); // Refresh the page
+    });
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
