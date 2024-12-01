@@ -103,9 +103,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         clearAccessToken();
         window.location.reload(); // Refresh the page
     });
-    if (!getAccessToken()) {
-        logoutBtn2.classList.add('hidden');
-    }
     checkAndFetchPlaylists()
     function login(){
     
