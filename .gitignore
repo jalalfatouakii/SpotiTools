@@ -1,6 +1,8 @@
 .env
 /public/alpha.js
 .DS_Store
-.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
 /public/scriptoo.js
 history
