@@ -483,6 +483,11 @@ body {
         height : 30vh;
         width: 30vh;
     }
+    .logouting{
+        justify-content: center;
+        text-align: center;
+    }
+    
 }
 
 
@@ -804,7 +809,9 @@ body {
     margin: 10px 0;
     cursor: pointer;
     border-radius: 25px;
+    font-family: Gotham-Bold;
     transition: background-color 0.3s ease;
+    
 }
 
 #logout-btn:hover , #logout-btn2:hover {
