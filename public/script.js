@@ -1571,6 +1571,24 @@ document.addEventListener('DOMContentLoaded',async function (){
                 <button id="showmoreartist"> Show more</button>`
                 ;
                 trackInfoDiv.appendChild(artistInfo);
+                document.getElementById('showmoreartist').addEventListener('click', function() {
+                    const moreArtists = `
+                        <div class="songo">
+                            <a href="${artistData.items[3].external_urls.spotify}" target="_blank">
+                                <img width="150" height="150" src="${artistImageUrl3}" alt="Artist Image" />
+                            </a>
+                            <p><a href="${artistData.items[3].external_urls.spotify}" target="_blank">${artistData.items[3].name}</a></p>
+                        </div>
+                        <div class="songo">
+                            <a href="${artistData.items[4].external_urls.spotify}" target="_blank">
+                                <img width="150" height="150" src="${artistImageUrl4}" alt="Artist Image" />
+                            </a>
+                            <p><a href="${artistData.items[4].external_urls.spotify}" target="_blank">${artistData.items[4].name}</a></p>
+                        </div>
+                    `;
+                    artistInfo.insertAdjacentHTML('beforeend', moreArtists);
+                    this.style.display = 'none'; // Hide the button after clicking
+                });
             })
             .catch(error => {
                 console.error('Error fetching top artists:', error);
