@@ -1622,6 +1622,13 @@ document.addEventListener('DOMContentLoaded',async function (){
                     ? trackData.items[2].album.images[1].url // Use the second image for medium size
                     : 'default-image-url.jpg'; // Fallback image if no album cover is available
                 
+                const albumCoverUrl3 = trackData.items[0].album.images && trackData.items[3].album.images.length > 0
+                    ? trackData.items[3].album.images[1].url // Use the second image for medium size
+                    : 'default-image-url.jpg'; // Fallback image if no album cover is available
+                const albumCoverUrl4 = trackData.items[0].album.images && trackData.items[4].album.images.length > 0
+                    ? trackData.items[4].album.images[1].url // Use the second image for medium size
+                    : 'default-image-url.jpg'; // Fallback image if no album cover is available
+                
                 trackInfoDiv.appendChild(josh);
                 
                 trackInfo.innerHTML = `
@@ -1648,6 +1655,24 @@ document.addEventListener('DOMContentLoaded',async function (){
                         
 
                 `;
+                document.getElementById('showmoresong').addEventListener('click', function() {
+                    const moreTracks = `
+                        <div class="songo">
+                            <a href="${trackData.items[3].external_urls.spotify}" target="_blank">
+                                <img width="150" height="150" src="${albumCoverUrl3}" alt="Album Cover" />
+                            </a>
+                            <p>${trackData.items[3].name} by <strong>${trackData.items[3].artists[0].name}</strong></p>
+                        </div>
+                        <div class="songo">
+                            <a href="${trackData.items[4].external_urls.spotify}" target="_blank">
+                                <img width="150" height="150" src="${albumCoverUrl4}" alt="Album Cover" />
+                            </a>
+                            <p>${trackData.items[4].name} by <strong>${trackData.items[4].artists[0].name}</strong></p>
+                        </div>
+                    `;
+                    trackInfo.insertAdjacentHTML('beforeend', moreTracks);
+                    this.style.display = 'none'; // Hide the button after clicking
+                });
                 
                 trackInfoDiv.appendChild(trackInfo);
                 document.getElementById('showmoresong').addEventListener('click', () => {
