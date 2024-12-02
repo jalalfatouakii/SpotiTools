@@ -1655,6 +1655,7 @@ document.addEventListener('DOMContentLoaded',async function (){
                         
 
                 `;
+                trackInfoDiv.appendChild(trackInfo);
                 document.getElementById('showmoresong').addEventListener('click', function() {
                     const moreTracks = `
                         <div class="songo">
@@ -1674,8 +1675,8 @@ document.addEventListener('DOMContentLoaded',async function (){
                     this.style.display = 'none'; // Hide the button after clicking
                 });
                 
-                trackInfoDiv.appendChild(trackInfo);
-                document.getElementById('showmoresong').addEventListener('click', () => {
+                
+                //document.getElementById('showmoresong').addEventListener('click', () => {
                    // console.log("showing")
                     /*
                     const albumCoverUrl3 = trackData.items[0].album.images && trackData.items[3].album.images.length > 0
