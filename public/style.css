@@ -733,6 +733,7 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.5s;
+    margin:2%;
 }
 
 #timeRangeButtons button:hover {
