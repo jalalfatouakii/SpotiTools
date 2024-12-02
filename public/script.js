@@ -1723,7 +1723,7 @@ document.addEventListener('DOMContentLoaded',async function (){
                         
                         trackInfoDiv.appendChild(trackInfo);
                         */
-                });
+                //});
             })
             .catch(error => {
                 console.error('Error fetching top tracks:', error);
