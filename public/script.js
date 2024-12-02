@@ -1541,6 +1541,12 @@ document.addEventListener('DOMContentLoaded',async function (){
                 const artistImageUrl2 = artistData.items[2].images && artistData.items[2].images.length > 0 
                     ? artistData.items[2].images[0].url 
                     : 'default-artist-image.jpg';
+                const artistImageUrl3 = artistData.items[3].images && artistData.items[3].images.length > 0 
+                    ? artistData.items[3].images[0].url 
+                    : 'default-artist-image.jpg';
+                const artistImageUrl4 = artistData.items[4].images && artistData.items[4].images.length > 0 
+                    ? artistData.items[4].images[0].url 
+                    : 'default-artist-image.jpg';
 
                 hamid.innerHTML = `
                 <strong>Most listened artists:</strong>`
