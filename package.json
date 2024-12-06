@@ -1,5 +1,5 @@
 {
-  "name": "Filterify",
+  "name": "filterify",
   "version": "1.0.0",
   "main": "proxy-server.js",
   "scripts": {
