@@ -1,5 +1,5 @@
 {
-  "name": "spotitools",
+  "name": "Filterify",
   "version": "1.0.0",
   "main": "proxy-server.js",
   "scripts": {
